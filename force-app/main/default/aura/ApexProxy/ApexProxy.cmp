@@ -1,0 +1,13 @@
+<aura:component access="global">
+  <aura:method name="call" description="Call an @AuraEnabled method on an Apex class, pass parameters, callbacks and events to fire.">
+    <aura:attribute name="action" type="Object" description="The @AuraEnabled method the consuming component's Apex controller." />
+    <aura:attribute name="actionParams" type="Object" description="An object with properties matching parameter names for the Apex method. Check your data types, kids! "/>
+    <aura:attribute name="onSuccess" type="Object" description="An anonymous function to handle the success callback OR a string representing the 'title' in the application and component events." />
+    <aura:attribute name="onError" type="Object" description="An anonymous function to handle the error callback OR a string representing the 'title' in the application and component events." />
+    <aura:attribute name="store" type="Boolean" default="false" description="Wether or not the action is storable" />
+    <aura:attribute name="showSpinner" type="Boolean" default="false" description="show spinner by default" />
+    <aura:attribute name="showNotification" type="Boolean" default="false" description="show error notification on error" />
+  </aura:method>
+  <c:Notifications aura:id="notify" />
+  <c:Spinner aura:id="spinner" />
+</aura:component>

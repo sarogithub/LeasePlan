@@ -1,0 +1,17 @@
+<aura:component>
+    <aura:attribute name="company" 
+                    type="Object" 
+                    access="public"/>
+    <aura:attribute name="fieldsAndCompType" 
+                    type="Object[]" 
+                    access="public"/>
+
+    <lightning:card iconName="custom:custom16" title="{#v.company.Name}">
+        <lightning:tile>             
+            <aura:iteration items="{!v.fieldsAndCompType}" var="fieldAndCompTypeVar">
+                <c:DynamicComponents ComponentName="{#fieldAndCompTypeVar.sk14__Component_Type__c}" obj="{#v.company}" 
+                AuraId="{#fieldAndCompTypeVar.sk14__Field_API_Name__c}" FieldName="{#fieldAndCompTypeVar.sk14__Field_API_Name__c}"/>
+            </aura:iteration>
+        </lightning:tile>
+    </lightning:card>
+</aura:component>	

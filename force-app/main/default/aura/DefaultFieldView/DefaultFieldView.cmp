@@ -1,0 +1,4 @@
+<aura:component>
+    <aura:attribute name="fieldValue" type="Integer" default="0" access="public"/>
+    <p class="slds-p-horizontal_small" title="{#v.barValue}">{#v.fieldValue}</p> 
+</aura:component>	

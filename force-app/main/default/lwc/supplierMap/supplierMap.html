@@ -1,0 +1,22 @@
+<template>
+    <lightning-accordion allow-multiple-sections-open>		
+		<lightning-accordion-section label="Supplier Details">   
+            <lightning-record-form
+                record-id={recordId}
+                object-api-name={objectApiName}
+                layout-type="Compact"
+                columns="1"
+                mode="readonly">
+            </lightning-record-form>
+		</lightning-accordion-section>
+	</lightning-accordion>
+
+    <lightning-map
+        map-markers={mapMarkers}
+        markers-title={markersTitle}
+        onmarkerselect={handleMarkerSelect}
+        selected-marker-value={selectedMarkerValue}
+        list-view="hidden"
+        zoom-level="10">
+    </lightning-map>
+</template>
