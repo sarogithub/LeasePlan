@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="fieldValue" type="Integer" default="0" access="public"/>
+
+    <div class="slds-p-horizontal_small">
+        <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-6">
+            <span>Percentage of Employee</span>
+            <span aria-hidden="true">
+              <strong>{#v.fieldValue} %</strong>
+            </span>
+        </div>
+        <lightning:progressBar value="{#v.fieldValue}"/>
+    </div>
+</aura:component>

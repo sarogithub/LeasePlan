@@ -1,0 +1,26 @@
+<template>  
+    <div class = "slds-m-around_medium">  
+        <template if:true={supplierList}>  
+            <div style="height: 300px;">  
+                <lightning-datatable key-field="Id"  
+                    data={supplierList}  
+                    columns={columns}  
+                    hide-checkbox-column={hideCheckboxColumn}  
+                    onrowaction={callRowAction}>  
+                </lightning-datatable>
+            </div>                   
+        </template>  
+        <template if:true={error}>  
+            {error} 
+        </template>
+        
+        <c-modal-box
+            cancel-button-label="Close"
+            popup-title={modalTitle}
+            this-arg={thisArg}
+            supplier-rec={selectedSupplierRec}
+            if:true={showAndHideModal}
+            account={account}>
+        </c-modal-box>
+    </div>  
+</template>  

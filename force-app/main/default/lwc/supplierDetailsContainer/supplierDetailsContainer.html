@@ -1,0 +1,50 @@
+<template>
+    <lightning-card
+            variant="narrow"
+            icon-name="standard:opportunity">
+        <h1 slot="title">Supplier Information</h1>
+        <template if:true={supplierList}>
+            <div class="msgDiv">
+                <div class="infoBox">
+                    <p class="pTagCls">
+                        <lightning-icon icon-name="utility:info_alt" alternative-text="The below list of suppliers filtered based on Account Billing City" 
+                            title="Info" size="small"></lightning-icon>
+                        <strong class="strongMargin">Info</strong> {label.supplierFilteredBasedOnBillingCity} <b> {billingCity} </b>
+                    </p>
+                </div>
+            </div>
+            
+            <c-spinner if:true={isLoading}></c-spinner>
+    
+            <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small slds-align_absolute-center">
+                <lightning-input type="search"
+                    placeholder="Search Suppliers"
+                    isloading=true
+                    onchange={handleKeyChange}
+                    disabled={isdisabled} 
+                    value={selectedName}
+                    variant="label-hidden"
+                    class="searchBox">
+                </lightning-input>
+            </div>
+            
+            <c-supplier-list
+                supplier-list={supplierList}
+                columns={columns}
+                hide-checkbox-column="true"
+                show-row-no-column="false"
+                account={account}>
+            </c-supplier-list>
+        </template>
+
+        <div class="msgDiv" if:true={infoMessage}>
+            <div class="infoBox">
+                <p class="pTagCls">
+                    <lightning-icon icon-name="utility:info_alt" alternative-text="No Supplier data available for the current city" 
+                        title="Info" size="small"></lightning-icon>
+                    <strong class="strongMargin">Info</strong> {infoMessage}
+                </p>
+            </div>
+        </div>
+    </lightning-card>
+</template>

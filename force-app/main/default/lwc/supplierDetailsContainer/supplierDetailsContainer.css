@@ -1,0 +1,25 @@
+.searchBox{
+    width: 279px;
+}
+
+.infoBox {
+    padding: 10px;
+    background-color: #a09f9e;
+    color: white;
+    border-radius : 20px;
+}
+
+.msgDiv { 
+    max-height: 500px;
+    width: calc(100% - 17px);
+    margin: 10px;
+    border: thin solid #ffffff;  
+}
+
+.strongMargin {
+    margin: 10px; 
+}
+
+.pTagCls {
+    font-size: 14px;
+}

@@ -1,0 +1,22 @@
+{
+  "orgName": "Saravana Org",
+  "adminEmail": "saravanamials14@gmail.com",
+  "edition": "Developer",
+  "hasSampleData": "false",
+  "namespace": "sk14",
+  "features": ["ContactsToMultipleAccounts","AuthorApex","DefaultWorkflowUser"],
+  "settings": {
+    "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+    },
+	"chatterSettings": {
+		"enableChatter": true
+	},
+	"contentSettings": {
+		"enableUploadFilesOnAttachments": true
+	},
+	"mobileSettings": {
+		"enableS1EncryptedStoragePref2": false
+	}
+  }
+}

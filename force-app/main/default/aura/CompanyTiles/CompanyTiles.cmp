@@ -1,0 +1,24 @@
+<aura:component controller="CompanyController">
+    <aura:attribute name="companies" 
+                    type="Object[]" 
+                    access="public"/>
+    <aura:attribute name="fieldsAndCompType" 
+                    type="Object[]" 
+                    access="public"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:layout horizontalAlign="spread" multipleRows="true">
+        <aura:iteration items="{!v.companies}" var="company">
+            <lightning:layoutItem padding="around-small" 
+                                size="12" 
+                                smallDeviceSize="12" 
+                                mediumDeviceSize="6" 
+                                largeDeviceSize="2" >
+                <c:CompanyTile company="{#company}" fieldsAndCompType="{!v.fieldsAndCompType}" />
+            </lightning:layoutItem>    
+        </aura:iteration>
+    </lightning:layout>
+    <c:ApexProxy aura:id="apexProxy"/>
+    <c:Notifications aura:id="notify"/>
+</aura:component>	
